@@ -2,19 +2,9 @@ package com.ssm.mpsi.SAMLProvider.IDP;
 
 import org.opensaml.core.criterion.EntityIdCriterion;
 import org.opensaml.security.credential.Credential;
-import org.opensaml.security.credential.CredentialSupport;
 import org.opensaml.security.credential.impl.KeyStoreCredentialResolver;
-import org.opensaml.security.crypto.KeySupport;
-import org.opensaml.security.x509.BasicX509Credential;
 import org.opensaml.xmlsec.SignatureSigningParameters;
 import org.opensaml.xmlsec.signature.support.SignatureConstants;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.ssm.mpsi.SAMLProvider.SAMLMetadata;
-import com.ssm.mpsi.model.Certificate;
-
 import net.shibboleth.utilities.java.support.resolver.CriteriaSet;
 import net.shibboleth.utilities.java.support.resolver.Criterion;
 
@@ -23,8 +13,6 @@ import java.security.*;
 import java.security.cert.CertificateException;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class IDPCredentials {
 

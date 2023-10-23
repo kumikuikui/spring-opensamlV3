@@ -1,88 +1,24 @@
 package com.ssm.mpsi.SAMLProvider;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
 import java.security.KeyStore;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.text.SimpleDateFormat;
-// import java.time.Duration;
-// import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.UUID;
-
-// import javax.xml.crypto.dsig.keyinfo.X509Data;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.opensaml.core.config.InitializationException;
-import org.opensaml.core.config.InitializationService;
 import org.opensaml.core.criterion.EntityIdCriterion;
-import org.opensaml.core.xml.config.XMLObjectProviderRegistrySupport;
-import org.opensaml.core.xml.io.Marshaller;
-import org.opensaml.core.xml.io.MarshallerFactory;
-import org.opensaml.core.xml.io.MarshallingException;
-import org.opensaml.saml.common.SAMLVersion;
 import org.opensaml.saml.common.xml.SAMLConstants;
 import org.opensaml.saml.saml2.core.AuthnRequest;
 import org.opensaml.saml.saml2.core.Issuer;
 import org.opensaml.saml.saml2.core.NameIDPolicy;
 import org.opensaml.saml.saml2.core.NameIDType;
-import org.opensaml.saml.saml2.metadata.AssertionConsumerService;
 import org.opensaml.saml.saml2.metadata.Endpoint;
-import org.opensaml.saml.saml2.metadata.EntityDescriptor;
-import org.opensaml.saml.saml2.metadata.KeyDescriptor;
-import org.opensaml.saml.saml2.metadata.NameIDFormat;
-import org.opensaml.saml.saml2.metadata.SPSSODescriptor;
-import org.opensaml.saml.saml2.metadata.SingleLogoutService;
 import org.opensaml.saml.saml2.metadata.SingleSignOnService;
-import org.opensaml.saml.saml2.metadata.impl.AssertionConsumerServiceBuilder;
-import org.opensaml.saml.saml2.metadata.impl.EntityDescriptorBuilder;
-import org.opensaml.saml.saml2.metadata.impl.KeyDescriptorBuilder;
-import org.opensaml.saml.saml2.metadata.impl.NameIDFormatBuilder;
-import org.opensaml.saml.saml2.metadata.impl.SPSSODescriptorBuilder;
-import org.opensaml.saml.saml2.metadata.impl.SingleLogoutServiceBuilder;
-import org.opensaml.security.SecurityException;
 import org.opensaml.security.credential.Credential;
-import org.opensaml.security.credential.UsageType;
 import org.opensaml.security.credential.impl.KeyStoreCredentialResolver;
-import org.opensaml.security.x509.BasicX509Credential;
 import org.opensaml.xmlsec.SignatureSigningParameters;
-import org.opensaml.xmlsec.signature.KeyInfo;
-import org.opensaml.xmlsec.signature.Signature;
-import org.opensaml.xmlsec.signature.X509Data;
 import org.opensaml.xmlsec.signature.support.SignatureConstants;
-import org.opensaml.xmlsec.signature.support.SignatureException;
-import org.opensaml.xmlsec.signature.support.Signer;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
 import net.shibboleth.utilities.java.support.resolver.CriteriaSet;
 import net.shibboleth.utilities.java.support.resolver.Criterion;
-import net.shibboleth.utilities.java.support.xml.SerializeSupport;
 
 public class SAMLRequest {
 

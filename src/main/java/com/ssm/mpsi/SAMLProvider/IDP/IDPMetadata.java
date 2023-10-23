@@ -20,8 +20,6 @@ import org.opensaml.xmlsec.keyinfo.impl.X509KeyInfoGeneratorFactory;
 import org.w3c.dom.Element;
 
 import com.ssm.mpsi.SAMLProvider.OpenSAMLUtils;
-import com.ssm.mpsi.SAMLProvider.SAMLRequest;
-
 import net.shibboleth.utilities.java.support.xml.SerializeSupport;
 
 public class IDPMetadata {
